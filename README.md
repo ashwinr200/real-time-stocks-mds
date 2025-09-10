@@ -63,7 +63,7 @@ real-time-stocks-pipeline/
 ├── docker-compose.yml            # Kafka, Zookeeper, MinIO, Airflow, Postgres
 ├── requirements.txt
 └── README.md                     # Documentation
-
+```
 ---
 
 ## 🚀 Getting Started
