@@ -79,7 +79,7 @@ def load_to_snowflake(**kwargs):
         
         # Test if table exists
         try:
-            cur.execute("SELECT 1 FROM STOCK_MDS.COMMON.bronze_stock_quotes_raw LIMIT 1")
+            cur.execute("SELECT 1 FROM STOCKS_MDS.COMMON.bronze_stock_quotes_raw LIMIT 1")
             print("✅ Table exists: STOCK_MDS.COMMON.bronze_stock_quotes_raw")
         except:
             print("❌ Table STOCK_MDS.COMMON.bronze_stock_quotes_raw does not exist or inaccessible")
@@ -89,7 +89,7 @@ def load_to_snowflake(**kwargs):
         for f in local_files:
             try:
                 # Use fully qualified table stage
-                put_command = f"PUT 'file://{f}' @STOCK_MDS.COMMON.%bronze_stock_quotes_raw AUTO_COMPRESS=FALSE"
+                put_command = f"PUT 'file://{f}' @STOCKS_MDS.COMMON.%bronze_stock_quotes_raw AUTO_COMPRESS=FALSE"
                 print(f"🔄 Executing: {put_command}")
                 cur.execute(put_command)
                 print(f"✅ Uploaded {f} to Snowflake stage")
@@ -99,7 +99,7 @@ def load_to_snowflake(**kwargs):
 
         # Copy data into table
         copy_command = """
-        COPY INTO STOCK_MDS.COMMON.bronze_stock_quotes_raw
+        COPY INTO STOCKS_MDS.COMMON.bronze_stock_quotes_raw
         FROM @STOCK_MDS.COMMON.%bronze_stock_quotes_raw
         FILE_FORMAT = (TYPE=JSON)
         """
