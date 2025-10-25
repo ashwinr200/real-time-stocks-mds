@@ -7,7 +7,7 @@ from kafka import KafkaConsumer
 #Minio Connection
 s3 = boto3.client(
     "s3",
-    endpoint_url="http://localhost:9002",
+    endpoint_url="http://13.218.129.35:9002",
     aws_access_key_id="admin",
     aws_secret_access_key="password123"
 )
@@ -25,7 +25,7 @@ except Exception:
 #Define Consumer
 consumer = KafkaConsumer(
     "stock-quotes",
-    bootstrap_servers=["host.docker.internal:29092"],
+    bootstrap_servers=["172.31.2.81:29092"],
     auto_offset_reset="earliest",
     enable_auto_commit=True,
     group_id="bronze-consumer1",
