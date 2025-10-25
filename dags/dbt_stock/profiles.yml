@@ -1,0 +1,13 @@
+dbt_stock:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "sz09842.central-india.azure"
+      user: "ASHWIN2001"
+      password: "AshAna@258643003781"
+      role: "ACCOUNTADMIN"
+      database: "STOCKS_MDS"
+      warehouse: "COMPUTE_WH"
+      schema: "COMMON"
+      threads: 4

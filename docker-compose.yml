@@ -102,6 +102,7 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
       - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
     volumes:
+      - ./dbt_stock:/opt/airflow/dbt_stock
       - ./dags:/opt/airflow/dags
       - ./plugins:/opt/airflow/plugins
     ports:
@@ -123,6 +124,7 @@ services:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
       - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW__CORE__FERNET_KEY}
     volumes:
+      - ./dbt_stock:/opt/airflow/dbt_stock
       - ./dags:/opt/airflow/dags
       - ./plugins:/opt/airflow/plugins
     command: scheduler
