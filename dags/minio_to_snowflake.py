@@ -100,7 +100,7 @@ def load_to_snowflake(**kwargs):
         # Copy data into table
         copy_command = """
         COPY INTO STOCKS_MDS.COMMON.bronze_stock_quotes_raw
-        FROM @STOCK_MDS.COMMON.%bronze_stock_quotes_raw
+        FROM @STOCKS_MDS.COMMON.%bronze_stock_quotes_raw
         FILE_FORMAT = (TYPE=JSON)
         """
         print("🔄 Executing COPY command...")
