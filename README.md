@@ -148,6 +148,4 @@ real-time-stocks-pipeline/
 
 **Author**: *Ashwin R* 
 
-**LinkedIn**: [username](https://www.linkedin.com/in/jayachandrakadiveti/) 
 
-**Contact**: [datawithjay1@gmail.com](mailto:datawithjay1@gmail.com)
