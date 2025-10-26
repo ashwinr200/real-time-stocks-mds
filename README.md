@@ -146,7 +146,7 @@ real-time-stocks-pipeline/
 
 ---
 
-**Author**: *Jaya Chandra Kadiveti* 
+**Author**: *Ashwin R* 
 
 **LinkedIn**: [username](https://www.linkedin.com/in/jayachandrakadiveti/) 
 
